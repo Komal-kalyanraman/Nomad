@@ -1,0 +1,51 @@
+
+
+
+==> Loaded configuration from nomad.conf
+==> Starting Nomad agent...
+==> Nomad agent configuration:
+
+       Advertise Addrs: HTTP: 127.0.0.1:4646; RPC: 127.0.0.1:4647; Serf: 127.0.0.1:4648
+            Bind Addrs: HTTP: [127.0.0.1:4646]; RPC: 127.0.0.1:4647; Serf: 127.0.0.1:4648
+                Client: true
+             Log Level: INFO
+                Region: global (DC: dc1)
+                Server: true
+               Version: 1.2.6
+
+==> Nomad agent started! Log data will stream in below:
+
+    2020-03-12T07:57:04.790+0100 [INFO]  agent: detected plugin: name=qemu type=driver plugin_version=0.1.0
+    2020-03-12T07:57:04.790+0100 [INFO]  agent: detected plugin: name=java type=driver plugin_version=0.1.0
+    2020-03-12T07:57:04.790+0100 [INFO]  agent: detected plugin: name=docker type=driver plugin_version=0.1.0
+    2020-03-12T07:57:04.790+0100 [INFO]  agent: detected plugin: name=raw_exec type=driver plugin_version=0.1.0
+    2020-03-12T07:57:04.790+0100 [INFO]  agent: detected plugin: name=exec type=driver plugin_version=0.1.0
+    2020-03-12T07:57:04.871+0100 [INFO]  nomad.raft: initial configuration: index=1 servers="[{Suffrage:Voter ID:127.0.0.1:4647 Address:127.0.0.1:4647}]"
+    2020-03-12T07:57:04.871+0100 [INFO]  nomad.raft: entering follower state: follower="Node at 127.0.0.1:4647 [Follower]" leader=
+    2020-03-12T07:57:04.881+0100 [INFO]  nomad: serf: EventMemberJoin: raspberrypi.global 127.0.0.1
+    2020-03-12T07:57:04.882+0100 [INFO]  nomad: starting scheduling worker(s): num_workers=4 schedulers=["service", "batch", "system", "sysbatch", "_core"]
+    2020-03-12T07:57:04.883+0100 [INFO]  nomad: started scheduling worker(s): num_workers=4 schedulers=["service", "batch", "system", "sysbatch", "_core"]
+    2020-03-12T07:57:04.884+0100 [INFO]  client: using state directory: state_dir=/tmp/NomadClient2623578628
+    2020-03-12T07:57:04.885+0100 [INFO]  client: using alloc directory: alloc_dir=/tmp/NomadClient3427978064
+    2020-03-12T07:57:04.885+0100 [INFO]  client: using dynamic ports: min=20000 max=32000 reserved=""
+    2020-03-12T07:57:04.890+0100 [INFO]  client.cpuset_manager: initialized cpuset cgroup manager: parent=/nomad cpuset=0-3
+    2020-03-12T07:57:04.892+0100 [INFO]  nomad: adding server: server="raspberrypi.global (Addr: 127.0.0.1:4647) (DC: dc1)"
+    2020-03-12T07:57:05.581+0100 [INFO]  client.fingerprint_mgr.cgroup: cgroups are available
+    2020-03-12T07:57:06.483+0100 [WARN]  nomad.raft: heartbeat timeout reached, starting election: last-leader=
+    2020-03-12T07:57:06.484+0100 [INFO]  nomad.raft: entering candidate state: node="Node at 127.0.0.1:4647 [Candidate]" term=2
+    2020-03-12T07:57:06.484+0100 [INFO]  nomad.raft: election won: tally=1
+    2020-03-12T07:57:06.484+0100 [INFO]  nomad.raft: entering leader state: leader="Node at 127.0.0.1:4647 [Leader]"
+    2020-03-12T07:57:06.486+0100 [INFO]  nomad: cluster leadership acquired
+    2020-03-12T07:57:06.522+0100 [INFO]  nomad.core: established cluster id: cluster_id=d238aee1-759e-4f89-44b9-eee481115fdf create_time=1583996226511028705
+    2020-03-12T07:57:11.738+0100 [INFO]  client.plugin: starting plugin manager: plugin-type=csi
+    2020-03-12T07:57:11.738+0100 [INFO]  client.plugin: starting plugin manager: plugin-type=driver
+    2020-03-12T07:57:11.739+0100 [INFO]  client.plugin: starting plugin manager: plugin-type=device
+    2020-03-12T07:57:12.638+0100 [INFO]  client: started client: node_id=860a8976-af8e-e3c3-e1db-063534cff27c
+    2020-03-12T07:57:12.700+0100 [INFO]  client: node registration complete
+    2020-03-12T07:57:13.709+0100 [INFO]  client: node registration complete
+==> Failed to check for updates: Get "https://checkpoint-api.hashicorp.com/v1/check/nomad?arch=arm&os=linux&signature=&version=1.2.6": context deadline exceeded (Client.Timeout exceeded while awaiting headers)2020-03-12T07:59:00.037+0100 [INFO]  client.alloc_runner.task_runner.task_hook.logmon.nomad: opening fifo: alloc_id=9a12bbbd-b9d8-275d-e503-a0ee26262c5c task=ui @module=logmon path=/tmp/NomadClient3427978064/9a12bbbd-b9d8-275d-e503-a0ee26262c5c/alloc/logs/.ui.stdout.fifo timestamp="2020-03-12T07:59:00.037+0100"
+
+2020-03-12T07:59:00.038+0100 [INFO]  client.alloc_runner.task_runner.task_hook.logmon.nomad: opening fifo: alloc_id=9a12bbbd-b9d8-275d-e503-a0ee26262c5c task=ui @module=logmon path=/tmp/NomadClient3427978064/9a12bbbd-b9d8-275d-e503-a0ee26262c5c/alloc/logs/.ui.stderr.fifo timestamp="2020-03-12T07:59:00.038+0100"
+2020-03-12T07:59:00.047+0100 [INFO]  client.driver_mgr.exec: starting task: driver=exec driver_cfg="{Command:/bin/bash Args:[-c cd /home/pi/Desktop/BoCSE22/WebApp/bin/Debug/net6.0 && /home/pi/Desktop/.dotnet/dotnet WebApp.dll] ModePID: ModeIPC: CapAdd:[] CapDrop:[]}"
+2020-03-12T07:59:00.553+0100 [INFO]  client.alloc_runner.task_runner: not restarting task: alloc_id=9a12bbbd-b9d8-275d-e503-a0ee26262c5c task=ui reason="Policy allows no restarts"
+2020-03-12T07:59:00.554+0100 [INFO]  client.gc: marking allocation for GC: alloc_id=9a12bbbd-b9d8-275d-e503-a0ee26262c5c

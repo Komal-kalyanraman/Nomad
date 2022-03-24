@@ -1,0 +1,4 @@
+
+sudo -E ./nomad agent -dev -config nomad.conf -bind 127.0.0.1 -log-level INFO
+
+./nomad job run binary_new.nomad
